@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "node-fetch": "./node-fetch.js",
+    "pretty-ms": "./pretty-ms.js"
+  }
+}
