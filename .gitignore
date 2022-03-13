@@ -1,5 +1,5 @@
 api/node_modules
-api/test
+api/test.js
 
 website/node_modules
 website/build
