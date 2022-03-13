@@ -1,4 +1,5 @@
 api/node_modules
 api/test.js
 
-web/node_modules
+website/node_modules
+website/build
