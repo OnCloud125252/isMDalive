@@ -18,14 +18,14 @@ export function TWtime() {
     }
 }
 
-export async function home() {
+export async function pingWithoutLogin(url) {
     let start_time = new Date().getTime();
-    let output = await fetch("http://www.mingdao.edu.tw/homeX/Web/")
+    let output = await fetch(url)
         .then(response => {
             if (response.status === 200) {
                 let responsetime = new Date().getTime() - start_time;
                 return {
-                    url: "http://www.mingdao.edu.tw/homeX/Web/",
+                    url: url,
                     time: TWtime().full,
                     ms: responsetime.toString(),
                     prettyms: prettyMS(responsetime, { secondsDecimalDigits: 2 })
@@ -33,34 +33,8 @@ export async function home() {
             }
             else {
                 return {
-                    url: "http://www.mingdao.edu.tw/homeX/Web/",
-                    error: "Error during connection"
-                }
-            }
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    return output;
-}
-
-export async function login() {
-    let start_time = new Date().getTime();
-    let output = await fetch("http://crm.mingdao.edu.tw/crm/")
-        .then(response => {
-            if (response.status === 200) {
-                let responsetime = new Date().getTime() - start_time;
-                return {
-                    url: "http://crm.mingdao.edu.tw/crm/",
-                    time: TWtime().full,
-                    ms: responsetime.toString(),
-                    prettyms: prettyMS(responsetime, { secondsDecimalDigits: 2 })
-                }
-            }
-            else {
-                return {
-                    url: "http://crm.mingdao.edu.tw/crm/",
-                    error: "Error during connection"
+                    error: "Error during connection",
+                    url: url
                 }
             }
         })
