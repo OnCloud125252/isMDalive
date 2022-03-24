@@ -13,8 +13,5 @@
     "chartjs": "^0.3.24",
     "node-fetch": "^3.2.2",
     "pretty-ms": "^7.0.1"
-  },
-  "devDependencies": {
-    "snowpack": "^3.8.8"
   }
 }
